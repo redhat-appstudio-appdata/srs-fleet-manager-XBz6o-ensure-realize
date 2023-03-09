@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: srs-fleet-manager-wj0r
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: srs-fleet-manager-wj0r
+    app.kubernetes.io/part-of: srs-fleet-manager
+  name: srs-fleet-manager-wj0r
+  namespace: nipatil-tenant
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app.kubernetes.io/instance: srs-fleet-manager-wj0r
+status:
+  loadBalancer: {}

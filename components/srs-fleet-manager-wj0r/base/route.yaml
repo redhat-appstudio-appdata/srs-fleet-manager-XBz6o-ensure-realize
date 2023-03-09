@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: srs-fleet-manager-wj0r
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: srs-fleet-manager-wj0r
+    app.kubernetes.io/part-of: srs-fleet-manager
+  name: srs-fleet-manager-wj0r
+  namespace: nipatil-tenant
+spec:
+  port:
+    targetPort: 8080
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: srs-fleet-manager-wj0r
+    weight: 100
+status: {}
